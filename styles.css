@@ -93,3 +93,13 @@ footer {
         font-size: 1.5rem; /* Adjust heading size for mobile */
     }
 }
+
+.coming-soon {
+    opacity: 0.7;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.coming-soon:hover {
+    opacity: 0.5;
+}
