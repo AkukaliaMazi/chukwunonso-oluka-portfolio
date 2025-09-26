@@ -176,53 +176,56 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+      .project-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+       
+       .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+} 
+        
 
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
+     .project-image {
+    height: 180px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
 
         .project-content {
             padding: 1.5rem;
         }
 
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
+       .project-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
 
-        .project-description {
-            color: #666;
-            margin-bottom: 1rem;
-        }
+     .project-description {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
 
         .project-tags {
             display: flex;
@@ -231,30 +234,37 @@
             margin-bottom: 1rem;
         }
 
-        .tag {
-            background: #f0f2ff;
-            color: #667eea;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
+       .tag {
+    background: #eef2ff;
+    color: #667eea;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
 
         .project-links {
             display: flex;
             gap: 1rem;
         }
 
-        .project-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+       .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
 
-        .project-link:hover {
-            color: #764ba2;
-        }
+
+      .project-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    color: #764ba2;
+}
+
 
         .skills-grid {
             display: grid;
@@ -432,75 +442,66 @@
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects">
-    <div class="container">
-        <h2 class="section-title">My Projects</h2>
-        
-        <!-- Project 1: Multi-Cloud Infrastructure Migration -->
-        <div class="project-item">
-            <div class="project-image">☁️</div>
-            <div class="project-content">
-                <h3>Multi-Cloud Infrastructure Migration</h3>
-                <p>Designed and executed migration of legacy on-premise infrastructure to AWS and Azure cloud platforms. Implemented Terraform for Infrastructure as Code (IaC), reducing deployment time by 70%.</p>
-                
-                <div class="tech-stack">
-                    <span>AWS</span>
-                    <span>Azure</span>
-                    <span>Terraform</span>
-                    <span>Kubernetes</span>
+    <section id="projects" class="section" style="background: #f8f9ff;">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">☁️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Cloud Infrastructure Migration</h3>
+                        <p class="project-description">Migrated enterprise applications from on-premises to multi-cloud architecture, reducing infrastructure costs by 40% and improving scalability.</p>
+                        <div class="project-tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Kubernetes</span>
+                        </div>
+                        <div class="project-links">
+    <a href="#" class="project-link">Case Study</a>
+    <a href="#" class="project-link">GitHub</a>
+</div>
+                    </div>
                 </div>
-                
-                <div class="project-links">
-                    <a href="https://github.com/AkukaliaMazi/cloud-migration-project" target="_blank">GitHub Repository</a>
-                    <a href="#" class="coming-soon">Case Study</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Project 2: CI/CD Pipeline Automation -->
-        <div class="project-item">
-            <div class="project-image">⚙️</div>
-            <div class="project-content">
-                <h3>CI/CD Pipeline Automation</h3>
-                <p>Built end-to-end CI/CD pipeline using Jenkins, Docker, and Kubernetes. Automated testing, building, and deployment processes for microservices architecture.</p>
-                
-                <div class="tech-stack">
-                    <span>Jenkins</span>
-                    <span>Docker</span>
-                    <span>Kubernetes</span>
-                    <span>AWS CodePipeline</span>
+                <div class="project-card">
+                    <div class="project-image">🔧</div>
+                    <div class="project-content">
+                        <h3 class="project-title">CI/CD Pipeline Automation</h3>
+                        <p class="project-description">Built automated CI/CD pipelines using Jenkins, GitLab CI, and AWS CodePipeline with infrastructure as code for seamless deployments.</p>
+                        <div class="project-tags">
+                            <span class="tag">Jenkins</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">AWS CodePipeline</span>
+                            <span class="tag">GitLab CI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="project-links">
-                    <a href="https://github.com/AkukaliaMazi/cicd-pipeline" target="_blank">GitHub Repository</a>
-                    <a href="#" class="coming-soon">Live Demo</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Project 3: Cloud Security & Compliance Framework -->
-        <div class="project-item">
-            <div class="project-image">🔒</div>
-            <div class="project-content">
-                <h3>Cloud Security & Compliance Framework</h3>
-                <p>Developed comprehensive security framework for AWS environment implementing CIS benchmarks. Configured AWS GuardDuty, Security Hub, and WAF for threat detection.</p>
-                
-                <div class="tech-stack">
-                    <span>AWS Security</span>
-                    <span>CloudTrail</span>
-                    <span>GuardDuty</span>
-                    <span>Compliance</span>
-                </div>
-                
-                <div class="project-links">
-                    <a href="https://github.com/AkukaliaMazi/cloud-security-framework" target="_blank">GitHub Repository</a>
-                    <a href="#" class="coming-soon">Architecture</a>
+                <div class="project-card">
+                    <div class="project-image">🛡️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cloud Security & Compliance Framework</h3>
+                        <p class="project-description">Implemented comprehensive cloud security framework with automated compliance monitoring, achieving SOC 2 Type II certification.</p>
+                        <div class="project-tags">
+                            <span class="tag">AWS Security</span>
+                            <span class="tag">CloudTrail</span>
+                            <span class="tag">GuardDuty</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Architecture</a>
+                            <a href="#" class="project-link">Documentation</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="skills" class="section">
         <div class="container">
@@ -568,7 +569,7 @@
         <span style="font-size: 1.5rem;">💼</span>
         <span>LinkedIn</span>  <!-- ✅ Show "LinkedIn" -->
     </a>
-    <a href="https://github.com/AkukaliaMazi" class="contact-item">
+    <a href="https://github.com/AkukaliaMazi" class="contact-item"> 
         <span style="font-size: 1.5rem;">💻</span>
         <span>GitHub</span>  <!-- ✅ Show "GitHub" -->
     </a>
